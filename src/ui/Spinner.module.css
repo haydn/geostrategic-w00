@@ -1,0 +1,12 @@
+.container {
+  animation: SpinnerRotation 0.5s infinite linear;
+}
+
+@keyframes SpinnerRotation {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

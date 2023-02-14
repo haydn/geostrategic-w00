@@ -1,0 +1,11 @@
+.container {
+  border-bottom: 1px solid var(--color-gray-s4);
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr auto;
+  padding: 10px;
+}
+
+.title {
+  font-weight: bold;
+}

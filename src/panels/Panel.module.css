@@ -1,0 +1,4 @@
+.container {
+  background: var(--color-gray-s5);
+  color: var(--color-gray-t5);
+}

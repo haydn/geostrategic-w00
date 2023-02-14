@@ -1,0 +1,9 @@
+.button {
+  background: var(--color-gray-00);
+  color: var(--color-gray-t5);
+  padding: 0.25rlh 1ch;
+}
+
+.button:focus {
+  outline: 2px solid var(--color-gray-t5);
+}

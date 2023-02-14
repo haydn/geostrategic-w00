@@ -1,0 +1,12 @@
+.container {
+  width: 100dvw;
+  height: 100dvh;
+  background: #333;
+}
+
+.panels {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+}

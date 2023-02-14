@@ -1,0 +1,276 @@
+/*
+Note: Ideally, this would be 2 separate files, but there's a bug in Next.js
+where the order of CSS imports gets messed-up:
+https://github.com/vercel/next.js/issues/16630
+*/
+
+/* universal */
+a,
+abbr,
+address,
+area,
+article,
+aside,
+audio,
+b,
+base,
+bdi,
+bdo,
+blockquote,
+body,
+br,
+button,
+canvas,
+caption,
+cite,
+code,
+col,
+colgroup,
+data,
+datalist,
+dd,
+del,
+details,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+head,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+input,
+ins,
+kbd,
+label,
+legend,
+li,
+link,
+main,
+map,
+mark,
+menu,
+meta,
+meter,
+nav,
+noscript,
+object,
+ol,
+optgroup,
+option,
+output,
+p,
+picture,
+pre,
+progress,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+script,
+search,
+section,
+select,
+slot,
+small,
+source,
+span,
+strong,
+style,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+template,
+textarea,
+tfoot,
+th,
+thead,
+time,
+title,
+tr,
+track,
+u,
+ul,
+var,
+video,
+wbr {
+  all: unset;
+  box-sizing: border-box;
+}
+
+svg,
+math {
+  box-sizing: border-box;
+}
+
+dialog,
+head,
+link,
+meta,
+noscript,
+script,
+style,
+title {
+  display: none;
+}
+
+address,
+article,
+aside,
+blockquote,
+details,
+dd,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+li,
+main,
+nav,
+ol,
+p,
+pre,
+section,
+ul {
+  display: block;
+}
+
+audio,
+canvas,
+iframe,
+img,
+math,
+object,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+dialog[open] {
+  display: block;
+}
+
+table {
+  display: table;
+}
+thead {
+  display: table-header-group;
+}
+tfoot {
+  display: table-footer-group;
+}
+tbody {
+  display: table-row-group;
+}
+tr {
+  display: table-row;
+}
+th,
+td {
+  display: table-cell;
+  text-align: start;
+}
+
+a,
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  font-family: sans-serif;
+  min-height: 100dvh;
+}
+
+/* global */
+
+:root {
+  --color-gray-s5: color-mix(in oklch, var(--color-gray-00), #000 50%);
+  --color-gray-s4: color-mix(in oklch, var(--color-gray-00), #000 40%);
+  --color-gray-s3: color-mix(in oklch, var(--color-gray-00), #000 30%);
+  --color-gray-s2: color-mix(in oklch, var(--color-gray-00), #000 20%);
+  --color-gray-s1: color-mix(in oklch, var(--color-gray-00), #000 10%);
+  --color-gray-00: oklch(40% 0 0);
+  --color-gray-t1: color-mix(in oklch, var(--color-gray-00), #fff 50%);
+  --color-gray-t2: color-mix(in oklch, var(--color-gray-00), #fff 60%);
+  --color-gray-t3: color-mix(in oklch, var(--color-gray-00), #fff 70%);
+  --color-gray-t4: color-mix(in oklch, var(--color-gray-00), #fff 80%);
+  --color-gray-t5: color-mix(in oklch, var(--color-gray-00), #fff 90%);
+
+  --color-red-s5: color-mix(in oklch, var(--color-red-00), #000 90%);
+  --color-red-s4: color-mix(in oklch, var(--color-red-00), #000 80%);
+  --color-red-s3: color-mix(in oklch, var(--color-red-00), #000 70%);
+  --color-red-s2: color-mix(in oklch, var(--color-red-00), #000 60%);
+  --color-red-s1: color-mix(in oklch, var(--color-red-00), #000 50%);
+  --color-red-00: oklch(66.02% 0.2827 31.51);
+  --color-red-t1: color-mix(in oklch, var(--color-red-00), #fff 50%);
+  --color-red-t2: color-mix(in oklch, var(--color-red-00), #fff 60%);
+  --color-red-t3: color-mix(in oklch, var(--color-red-00), #fff 70%);
+  --color-red-t4: color-mix(in oklch, var(--color-red-00), #fff 80%);
+  --color-red-t5: color-mix(in oklch, var(--color-red-00), #fff 90%);
+
+  --size-00: 1rem;
+}
+
+input,
+progress {
+  all: revert;
+  box-sizing: border-box;
+}
+
+progress {
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+}
+
+body {
+  font: normal 400 12px / 16px -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: red;
+}

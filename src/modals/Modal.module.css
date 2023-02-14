@@ -1,0 +1,17 @@
+.container {
+  bottom: 0;
+  grid-template: auto / minmax(400px, auto);
+  left: 0;
+  place-content: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.container::backdrop {
+  background: color-mix(in srgb, var(--color-gray-s3) 90%, transparent);
+}
+
+.container[open] {
+  display: grid;
+}
