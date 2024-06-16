@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^0.11.10
     version: 0.11.10
   supabase:
-    specifier: ^1.176.10
-    version: 1.176.10
+    specifier: ^1.178.2
+    version: 1.178.2
   typescript-eslint:
     specifier: ^7.13.0
     version: 7.13.0(eslint@9.5.0)(typescript@5.4.5)
@@ -2575,8 +2575,8 @@ packages:
       is-glob: 4.0.3
     dev: true
 
-  /glob@10.4.1:
-    resolution: {integrity: sha512-2jelhlq3E4ho74ZyVLN03oKdAZVUa6UDZzFLVH1H7dnoax+y9qyaq8zBkfDIggjniU19z0wU18y16jMB2eyVIw==}
+  /glob@10.4.2:
+    resolution: {integrity: sha512-GwMlUF6PkPo3Gk21UxkCohOv0PLcIXVtKyLlpEI28R/cO/4eNOdmLk3CMW1wROV/WR/EsZOWAfBbBOqYvs88/w==}
     engines: {node: '>=16 || 14 >=14.18'}
     hasBin: true
     dependencies:
@@ -2584,6 +2584,7 @@ packages:
       jackspeak: 3.4.0
       minimatch: 9.0.4
       minipass: 7.1.2
+      package-json-from-dist: 1.0.0
       path-scurry: 1.11.1
     dev: true
 
@@ -3541,6 +3542,10 @@ packages:
       p-limit: 3.1.0
     dev: true
 
+  /package-json-from-dist@1.0.0:
+    resolution: {integrity: sha512-dATvCeZN/8wQsGywez1mzHtTlP22H8OEfPrVMLNr4/eGa+ijtLn/6M5f0dY8UKNrC2O9UCU6SSoG3qRKnt7STw==}
+    dev: true
+
   /parcel@2.12.0(postcss@8.4.38)(typescript@5.4.5):
     resolution: {integrity: sha512-W+gxAq7aQ9dJIg/XLKGcRT0cvnStFAQHPaI0pvD0U2l6IVLueUAm3nwN7lkY62zZNmlvNx6jNtE4wlbS+CyqSg==}
     engines: {node: '>= 12.0.0'}
@@ -3883,7 +3888,7 @@ packages:
     engines: {node: '>=14.18'}
     hasBin: true
     dependencies:
-      glob: 10.4.1
+      glob: 10.4.2
     dev: true
 
   /run-parallel@1.2.0:
@@ -4144,8 +4149,8 @@ packages:
       - supports-color
     dev: true
 
-  /supabase@1.176.10:
-    resolution: {integrity: sha512-VS+dRcNk7H2+qG4hCz2WqSKFeZxrMZ0k+LQnHiUX+d9bls1QyZvpXj3qmo4Hs30VS6ZYRQ3sgNVE2tEKWv6kcA==}
+  /supabase@1.178.2:
+    resolution: {integrity: sha512-JdjNY56cF5PbuhFdhgdYah5qXOPRsLQn0kXaY7uapTFopdIFX4tRiFXqKSig8S0SdznF/y/f6vLdq30Sek1ZZQ==}
     engines: {npm: '>=8'}
     hasBin: true
     requiresBuild: true
@@ -4153,7 +4158,7 @@ packages:
       bin-links: 4.0.4
       https-proxy-agent: 7.0.4
       node-fetch: 3.3.2
-      tar: 7.2.0
+      tar: 7.4.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4191,8 +4196,8 @@ packages:
       stable: 0.1.8
     dev: true
 
-  /tar@7.2.0:
-    resolution: {integrity: sha512-hctwP0Nb4AB60bj8WQgRYaMOuJYRAPMGiQUAotms5igN8ppfQM+IvjQ5HcKu1MaZh2Wy2KWVTe563Yj8dfc14w==}
+  /tar@7.4.0:
+    resolution: {integrity: sha512-XQs0S8fuAkQWuqhDeCdMlJXDX80D7EOVLDPVFkna9yQfzS+PHKgfxcei0jf6/+QAWcjqrnC8uM3fSAnrQl+XYg==}
     engines: {node: '>=18'}
     dependencies:
       '@isaacs/fs-minipass': 4.0.1

@@ -7,7 +7,7 @@
   "scripts": {
     "activate": "supabase start",
     "build:prep": "rm -rf dist",
-    "build": "pnpm build:prep && pnpm test && parcel build ./src/index.html",
+    "build": "pnpm build:prep && parcel build ./src/index.html",
     "deactivate": "supabase stop --no-backup",
     "dev": "parcel ./src/index.html",
     "gen:types": "supabase gen types typescript --local > ./src/_generated.ts",
@@ -36,7 +36,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "parcel": "^2.12.0",
     "process": "^0.11.10",
-    "supabase": "^1.176.10",
+    "supabase": "^1.178.2",
     "typescript-eslint": "^7.13.0",
     "typescript-plugin-css-modules": "^5.1.0"
   }

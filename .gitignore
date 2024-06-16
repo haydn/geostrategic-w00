@@ -32,3 +32,6 @@ yarn-error.log*
 # parcel
 .parcel-cache
 /dist
+
+# generated files
+/src/_generated.ts
