@@ -21,8 +21,10 @@ const Token = ({
 }) => {
   const fill =
     color === undefined
-      ? "hsl(1 0% 50%)"
-      : `hsl(${color} ${owner ? "100%" : "20%"} 50%)`;
+      ? `oklch(74% 0 0)`
+      : owner
+      ? `oklch(74% 0.14 ${color})`
+      : `oklch(74% 0.02 ${color})`;
   return (
     <g
       transform={`translate(${x + width / 2},${y + height / 2})`}
@@ -35,7 +37,8 @@ const Token = ({
         height={height}
         fill={fill}
         rx={5}
-        stroke="rgba(0,0,0,0.2)"
+        stroke={"#000"}
+        strokeWidth={2}
       />
       {width > 32 && height > 32 ? <Icon value={icon} /> : null}
     </g>

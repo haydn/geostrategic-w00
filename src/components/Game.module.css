@@ -1,7 +1,7 @@
 .container {
   width: 100dvw;
   height: 100dvh;
-  background: #333;
+  background: oklch(74% 0.02 145);
 }
 
 .panels {

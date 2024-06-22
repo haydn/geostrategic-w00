@@ -7,5 +7,5 @@
 }
 
 .title {
-  font-weight: bold;
+  color: oklch(100% 0, 0);
 }

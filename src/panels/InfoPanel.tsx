@@ -39,7 +39,7 @@ const InfoPanel = () => {
               {player ? (
                 <span
                   style={{
-                    color: `hsl(${player.color} 100% 50%)`,
+                    color: `oklch(74% 0.14 ${player.color})`,
                   }}
                 >
                   {player.name}
