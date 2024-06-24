@@ -1,5 +1,5 @@
 import useGameContext from "@/context/useGameContext";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 // @ts-expect-error PNGImage does not have types available.
 import PNGImage from "pnglib-es6";
 import Modal from "@/modals/Modal";
@@ -19,27 +19,27 @@ const IconEditor = () => {
   } = useGameContext();
 
   const [pixelSize, setPixelSize] = useState<number>(20);
-  const [pixels, setPixels] = useState<Array<boolean>>(
-    selectedClassification?.icon
-      ? () => {
-          const result: Array<boolean> = [];
-          for (let i = 0; i < 32; i++) {
-            const pixels = parseInt(
-              selectedClassification.icon.slice(2 + i * 8, 2 + i * 8 + 8),
-              16
-            )
-              .toString(2)
-              .padStart(32, "0")
-              .split("");
-            for (let j = 0; j < 32; j++) {
-              result[i * 32 + j] = pixels[j] === "1";
-            }
-          }
-          return result;
-        }
-      : DEFAULT
-  );
+  const [pixels, setPixels] = useState<Array<boolean>>(DEFAULT);
   const [showGrid, setShowGrid] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (selectedClassification) {
+      const result: Array<boolean> = [];
+      for (let i = 0; i < 32; i++) {
+        const pixels = parseInt(
+          selectedClassification.icon.slice(2 + i * 8, 2 + i * 8 + 8),
+          16
+        )
+          .toString(2)
+          .padStart(32, "0")
+          .split("");
+        for (let j = 0; j < 32; j++) {
+          result[i * 32 + j] = pixels[j] === "1";
+        }
+      }
+      setPixels(result);
+    }
+  }, [selectedClassification]);
 
   const dataUrl = useMemo<string>(() => {
     const image = new PNGImage(32, 32, 2, "transparent");
