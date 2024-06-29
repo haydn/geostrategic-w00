@@ -14,6 +14,10 @@ jobs:
       SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_PRODUCTION_DB_PASSWORD }}
       SUPABASE_PROJECT_ID: ${{ secrets.SUPABASE_PRODUCTION_PROJECT_ID }}
 
+    defaults:
+      run:
+        working-directory: ./game
+
     steps:
       - uses: actions/checkout@v3
       - name: Login to Docker Hub
