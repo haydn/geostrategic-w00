@@ -1,0 +1,10 @@
+{
+  "name": "geostrategic-w00-docs",
+  "private": true,
+  "scripts": {
+    "dev": "zola serve"
+  },
+  "prettier": {
+    "proseWrap": "always"
+  }
+}
