@@ -3,7 +3,11 @@ title = "Overview"
 weight = 0
 +++
 
-The game world is a 2D grid on which [units](@/units.md) are positioned. Some
+World 00 is the first in the series of Geostrategic worlds. This world is
+intended to be a sandbox for developing the basic game engine and is likely to
+be superseded by World 01 fairly quickly.
+
+World 00 has a simple 2D grid on which [units](@/units.md) are positioned. Some
 units are [autonomous units](@/units.md#autonomous-units) (which can be owned by
 [players](@/players.md)) and the rest are [inert units](@/units.md#inert-units).
 The characteristics of units are defined by their
