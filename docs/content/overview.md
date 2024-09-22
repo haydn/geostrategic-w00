@@ -4,8 +4,7 @@ weight = 0
 +++
 
 World 00 is the first in the series of Geostrategic worlds. This world is
-intended to be a sandbox for developing the basic game engine and is likely to
-be superseded by World 01 fairly quickly.
+intended to be a prototype for developing the basic game mechanics.
 
 World 00 has a simple 2D grid on which [units](@/units.md) are positioned. Some
 units are [autonomous units](@/units.md#autonomous-units) (which can be owned by
