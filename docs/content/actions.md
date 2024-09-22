@@ -13,8 +13,8 @@ Most [actions](@/actions.md) cost action points to execute. These points are
 paid from the supply of action points that
 [autonomous unit](@/units.md#autonomous-units) have accumulated. Action points
 are accumulated at a rate of 2,000 per second (irrespective of whether the
-player which owns the unit is online). Instead of keeping a running counting of
-a unit's current action points, the value is instead calculated from the unit's
+player who owns the unit is online). Instead of keeping a running counting of a
+unit's current action points, the value is instead calculated from the unit's
 `timestamp` which is updated each time a unit's action points are spent. A
 unit's actions points can never exceed 172,800,000 (the amount of action points
 that accumulate in a 2 day period).

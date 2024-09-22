@@ -29,9 +29,10 @@ property of its [classification](@/classifications.md).
 
 ### Autonomous Units
 
-An autonomous unit is a unit that can be owned by a [player](@/players.md).
+An autonomous unit is a unit that is owned by a [player](@/players.md).
 Autonomous units continuously gain [action points](@/actions.md#action-points)
-that are spent when executing [actions](@/actions.md).
+that are spent when executing [actions](@/actions.md). A player can transfer
+ownership of an autonomous unit to another player at any time.
 
 ### Inert Units
 
