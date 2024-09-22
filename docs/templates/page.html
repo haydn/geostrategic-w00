@@ -3,183 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Geostrategic → Docs → World 00 → {{page.title}}</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
-      * {
-        box-sizing: border-box;
-      }
-
-      :root {
-        --color-canvas: oklch(74% 0.02 145);
-        color-scheme: dark light;
-      }
-
-      main {
-        --color-canvas: oklch(100% 0 0);
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --color-canvas: oklch(26% 0.02 145);
-          color-scheme: light dark;
-        }
-
-        main {
-          --color-canvas: oklch(18% 0 0);
-        }
-      }
-
-      body {
-        background: var(--color-canvas);
-        display: grid;
-        font: normal 400 16px / 24px "Courier Prime", ui-monospace, Menlo,
-          Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
-          "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
-          "Courier New", monospace;
-        grid-template-columns: minmax(0, 120ch);
-        grid-template-rows: auto 1fr;
-        gap: 0.5lh;
-        justify-content: center;
-        margin: 0;
-        padding: 1lh;
-        min-height: 100vh;
-      }
-
-      main {
-        background: var(--color-canvas);
-        border-radius: 8px;
-        display: grid;
-        align-content: start;
-        gap: 1lh;
-        grid-template-columns: 30ch 1fr;
-        padding: 1lh;
-      }
-
-      main nav {
-        align-self: start;
-        background: color-mix(in oklch, currentColor, var(--color-canvas) 98%);
-        border-radius: 4px;
-        left: 0;
-        position: sticky;
-        top: 1lh;
-      }
-
-      main nav ul {
-        padding: 0 1em;
-      }
-
-      main nav ul li {
-        list-style: none;
-      }
-
-      main nav ul * + ul {
-        margin-top: 0.25lh;
-      }
-
-      main nav ul li + li {
-        margin-top: 0.25lh;
-      }
-
-      header {
-        font-size: 200%;
-        font-weight: bold;
-        border-radius: 8px;
-      }
-
-      header ol {
-        list-style-type: none;
-        padding: 0;
-      }
-
-      header ol li {
-        display: inline;
-      }
-
-      header ol li + li::before {
-        content: "→ ";
-        font-weight: normal;
-      }
-
-      header a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      h1 {
-        font-size: 2em;
-        margin-block-start: 0.67em;
-        margin-block-end: 0.67em;
-      }
-
-      code {
-        font: inherit;
-        background: color-mix(in oklch, currentColor, var(--color-canvas) 90%);
-        border: 1px solid
-          color-mix(in oklch, currentColor, var(--color-canvas) 80%);
-        border-radius: 4px;
-        padding: 0.25ex 0.5ex;
-      }
-
-      table {
-        border-collapse: collapse;
-      }
-
-      th {
-        text-align: left;
-      }
-
-      th,
-      td {
-        border: 1px solid
-          color-mix(in oklch, currentColor, var(--color-canvas) 80%);
-        padding: 0.25lh 0.5lh;
-      }
-
-      blockquote {
-        border-left: 1ex solid
-          color-mix(in oklch, currentColor, var(--color-canvas) 90%);
-        color: color-mix(in oklch, currentColor, var(--color-canvas) 50%);
-        margin-left: 0;
-        padding-left: 2ex;
-      }
-
-      .mermaid {
-        display: grid;
-        place-items: center;
-      }
-
-      .mermaid .marker {
-        fill: currentColor !important;
-        stroke: currentColor !important;
-      }
-
-      .mermaid .clusters rect {
-        fill: transparent !important;
-        stroke: currentColor !important;
-        stroke-dasharray: 4px 4px !important;
-      }
-
-      .mermaid .clusters .cluster-label,
-      .mermaid .clusters .cluster-label .nodeLabel {
-        color: currentColor !important;
-      }
-
-      .mermaid .edgePaths path {
-        stroke: currentColor !important;
-      }
-
-      .mermaid .nodes rect {
-        fill: transparent !important;
-        stroke: currentColor !important;
-        stroke-width: 2px !important;
-      }
-
-      .mermaid .nodes .label,
-      .mermaid .nodes .label .nodeLabel {
-        color: currentColor !important;
-      }
-    </style>
+    <link rel="stylesheet" href="/layout.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
@@ -207,14 +31,15 @@
   <body>
     {% set section = get_section(path="_index.md") -%}
     <header>
-      <nav>
-        <ol>
-          <li>
-            <a href="https://geostrategic.particlesystem.com/">Geostrategic</a>
-          </li>
-          <li>World 00: Docs</li>
-        </ol>
-      </nav>
+      <div>
+        <a class="logo" href="https://geostrategic.particlesystem.com/">
+          <img src="/logo.png" alt="" width="34" height="34" />
+          <span>Geostrategic</span>
+        </a>
+      </div>
+      <div>
+        <h1>World 00 Docs</h1>
+      </div>
     </header>
     <main>
       <nav>

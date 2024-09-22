@@ -1,0 +1,227 @@
+@import url("https://unpkg.com/@haydn/universal@0.0.3/universal.css");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.logo {
+  color: currentColor;
+  display: grid;
+  font-size: 32px;
+  font-weight: bold;
+  gap: 8px;
+  grid-template-columns: auto 1fr;
+  line-height: 34px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+:root {
+  --color-canvas: light-dark(oklch(74% 0.02 145), oklch(26% 0.02 145));
+  color-scheme: dark light;
+}
+
+body {
+  background: var(--color-canvas);
+  color: light-dark(oklch(0% 0 0), oklch(100% 0 0));
+  font: normal 400 16px / 24px "Courier Prime", ui-monospace, Menlo, Monaco,
+    "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
+    "Courier New", monospace;
+}
+
+body {
+  display: grid;
+  grid-template-columns: minmax(0, 120ch);
+  justify-content: center;
+  padding: 3lh 1lh;
+  gap: 3lh;
+}
+
+header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+}
+
+header h1 {
+  font-size: 32px;
+  line-height: 34px;
+}
+
+header h1::before {
+  content: "|";
+  font-weight: normal;
+  padding: 0 1em;
+}
+
+main {
+  --color-canvas: light-dark(oklch(100% 0 0), oklch(18% 0 0));
+  background: var(--color-canvas);
+  border-radius: 8px;
+  color: light-dark(black, oklch(90% 0 0));
+}
+
+main {
+  padding: 1lh;
+  display: grid;
+  align-content: start;
+  gap: 1lh;
+  grid-template-columns: 30ch 1fr;
+}
+
+/* nav */
+
+nav {
+  align-self: start;
+  background: color-mix(in oklch, currentColor, var(--color-canvas) 98%);
+  border-radius: 8px;
+  left: 0;
+  padding: 0.5lh;
+  position: sticky;
+  top: 1lh;
+}
+
+nav a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+nav ul ul {
+  padding-left: 1em;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul * + ul {
+  margin-top: 0.25lh;
+}
+
+nav ul li + li {
+  margin-top: 0.25lh;
+}
+
+/* article */
+
+article h1 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 34px;
+}
+
+article h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+article h3 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+article * + :where(h1, h2, h3) {
+  margin-top: 1lh;
+}
+
+article * + :where(blockquote, p, pre, table) {
+  margin-top: 0.5lh;
+}
+
+article a {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+article a:hover {
+  text-decoration: none;
+}
+
+article :where(ul, ol) {
+  padding-left: 4ch;
+}
+
+article :where(ul, ol) li {
+  display: list-item;
+}
+
+article ul li {
+  list-style: disc;
+}
+
+article ol li {
+  list-style: decimal;
+}
+
+article strong {
+  font-weight: bold;
+}
+
+article code {
+  font: inherit;
+  background: color-mix(in oklch, currentColor, var(--color-canvas) 90%);
+  border: 1px solid color-mix(in oklch, currentColor, var(--color-canvas) 80%);
+  border-radius: 4px;
+  padding: 0.25ex 0.5ex;
+}
+
+article th {
+  font-weight: bold;
+}
+
+article th,
+article td {
+  border: 1px solid color-mix(in oklch, currentColor, var(--color-canvas) 80%);
+  padding: 0.25lh 0.5lh;
+}
+
+article blockquote {
+  border-left: 1ex solid
+    color-mix(in oklch, currentColor, var(--color-canvas) 90%);
+  color: color-mix(in oklch, currentColor, var(--color-canvas) 50%);
+  margin-left: 0;
+  padding-left: 2ex;
+}
+
+/* mermaid */
+
+.mermaid {
+  display: grid;
+  place-items: center;
+}
+
+.mermaid .marker {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.mermaid .clusters rect {
+  fill: transparent !important;
+  stroke: currentColor !important;
+  stroke-dasharray: 4px 4px !important;
+}
+
+.mermaid .clusters .cluster-label,
+.mermaid .clusters .cluster-label .nodeLabel {
+  color: currentColor !important;
+}
+
+.mermaid .edgePaths path {
+  stroke: currentColor !important;
+}
+
+.mermaid .nodes rect {
+  fill: transparent !important;
+  stroke: currentColor !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .nodes .label,
+.mermaid .nodes .label .nodeLabel {
+  color: currentColor !important;
+}
