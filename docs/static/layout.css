@@ -184,8 +184,28 @@ article blockquote {
   border-left: 1ex solid
     color-mix(in oklch, currentColor, var(--color-canvas) 90%);
   color: color-mix(in oklch, currentColor, var(--color-canvas) 50%);
+  background: color-mix(in oklch, currentColor, var(--color-canvas) 98%);
   margin-left: 0;
-  padding-left: 2ex;
+  padding: 0.5lh 0 0.5lh 2ex;
+}
+
+/* footer */
+
+footer {
+  color: color-mix(in oklch, currentColor, var(--color-canvas) 50%);
+  font-size: 14px;
+  grid-column: 2 / -1;
+  padding-top: 0.5lh;
+  text-align: center;
+}
+
+footer a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
 }
 
 /* mermaid */
