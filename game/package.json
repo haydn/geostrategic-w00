@@ -10,6 +10,7 @@
     "build": "pnpm build:prep && parcel build ./src/index.html",
     "deactivate": "supabase stop --no-backup",
     "dev": "parcel ./src/index.html",
+    "format": "prettier --write .",
     "gen:types": "supabase gen types typescript --local > ./src/_generated.ts",
     "reset": "supabase db reset",
     "test:lint": "eslint -c ./eslint.config.mjs src",

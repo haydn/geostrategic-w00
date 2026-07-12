@@ -69,16 +69,15 @@ A "create" action is an action that produces new units.
 - Add action outputs table:
 
   ```sql
-  CREATE TABLE
-    action_outputs (
-      id uuid NOT NULL DEFAULT gen_random_uuid (),
-      action_id uuid NOT NULL,
-      classification_id uuid NOT NULL,
-      count integer NOT NULL,
-      created_at timestamptz NOT NULL DEFAULT now(),
-      PRIMARY KEY (id),
-      FOREIGN KEY (action_id) REFERENCES actions (id)
-    );
+  CREATE TABLE action_outputs (
+    id UUID NOT NULL DEFAULT gen_random_uuid(),
+    action_id UUID NOT NULL,
+    classification_id UUID NOT NULL,
+    count INTEGER NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (id),
+    FOREIGN KEY (action_id) REFERENCES actions (id)
+  );
   ```
 
 ### Action Inputs
@@ -87,16 +86,15 @@ Some actions might cost more than just action points. Action inputs are units
 that will be consumed when the action is executed.
 
 ```sql
-CREATE TABLE
-  action_inputs (
-    id uuid NOT NULL DEFAULT gen_random_uuid (),
-    action_id uuid NOT NULL,
-    classification_id uuid NOT NULL,
-    count integer NOT NULL,
-    created_at timestamptz NOT NULL DEFAULT now(),
-    PRIMARY KEY (id),
-    FOREIGN KEY (action_id) REFERENCES actions (id)
-  );
+CREATE TABLE action_inputs (
+  id UUID NOT NULL DEFAULT gen_random_uuid(),
+  action_id UUID NOT NULL,
+  classification_id UUID NOT NULL,
+  count INTEGER NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  PRIMARY KEY (id),
+  FOREIGN KEY (action_id) REFERENCES actions (id)
+);
 ```
 
 ### Action Requirements

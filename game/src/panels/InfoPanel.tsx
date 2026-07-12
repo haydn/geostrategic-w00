@@ -58,9 +58,9 @@ const InfoPanel = () => {
                   Math.floor(
                     now
                       .since(Temporal.Instant.from(selectedUnit.timestamp))
-                      .total("milliseconds")
-                  )
-                )
+                      .total("milliseconds"),
+                  ),
+                ),
               )}
               /
               {new Intl.NumberFormat("en", {
@@ -74,8 +74,8 @@ const InfoPanel = () => {
                 Math.floor(
                   now
                     .since(Temporal.Instant.from(selectedUnit.timestamp))
-                    .total("milliseconds")
-                )
+                    .total("milliseconds"),
+                ),
               )}
             />
           </>

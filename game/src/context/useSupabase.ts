@@ -6,7 +6,7 @@ import type { Database } from "../_generated";
 const useSupabase = () => {
   const supabase = useMemo(
     () => createClient<Database>(config.supabaseUrl, config.supabaseKey),
-    []
+    [],
   );
   return supabase;
 };

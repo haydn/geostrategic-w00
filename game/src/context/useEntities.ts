@@ -4,22 +4,22 @@ import { useEffect, useState } from "react";
 import parsePosition from "../utils/parsePosition";
 
 const unitRecordToEntity = (
-  r: Database["public"]["Tables"]["units"]["Row"]
+  r: Database["public"]["Tables"]["units"]["Row"],
 ) => ({
   ...r,
   position: parsePosition(r.position as string),
 });
 
 const classificationRecordToEntity = (
-  r: Database["public"]["Tables"]["classifications"]["Row"]
+  r: Database["public"]["Tables"]["classifications"]["Row"],
 ) => r;
 
 const playerRecordToEntity = (
-  r: Database["public"]["Tables"]["players"]["Row"]
+  r: Database["public"]["Tables"]["players"]["Row"],
 ) => r;
 
 const actionRecordToEntity = (
-  r: Database["public"]["Tables"]["actions"]["Row"]
+  r: Database["public"]["Tables"]["actions"]["Row"],
 ) => r;
 
 const entityToId = (r: { id: string }) => r.id;
@@ -65,7 +65,7 @@ const useEntity = <
   TableName extends string & keyof Database["public"]["Tables"],
   Table extends Database["public"]["Tables"][TableName],
   Record extends Table["Row"],
-  Entity
+  Entity,
 >({
   supabase,
   table,
@@ -90,7 +90,7 @@ const useEntity = <
       .then(({ data }) => {
         if (data) {
           setEntities(
-            (data as unknown as Array<Record>).map((r) => recordToEntity(r))
+            (data as unknown as Array<Record>).map((r) => recordToEntity(r)),
           );
         }
       });
@@ -105,9 +105,9 @@ const useEntity = <
         },
         (payload) => {
           setEntities((current) =>
-            current.filter((record) => entityToId(record) !== payload.old.id)
+            current.filter((record) => entityToId(record) !== payload.old.id),
           );
-        }
+        },
       )
       .subscribe((status) => {
         console.log(deleteChannel.topic, status);
@@ -123,7 +123,7 @@ const useEntity = <
         },
         (payload) => {
           setEntities((current) => current.concat(recordToEntity(payload.new)));
-        }
+        },
       )
       .subscribe((status) => {
         console.log(insertChannel.topic, status);
@@ -142,10 +142,10 @@ const useEntity = <
             current.map((record) =>
               entityToId(record) === payload.new.id
                 ? recordToEntity(payload.new)
-                : record
-            )
+                : record,
+            ),
           );
-        }
+        },
       )
       .subscribe((status) => {
         console.log(updateChannel.topic, status);

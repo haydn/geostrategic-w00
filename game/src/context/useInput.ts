@@ -32,7 +32,7 @@ const useInput = ({
   const { units, classifications, actions } = entities;
 
   const [selectedUnitId, setSelectedUnitId] = useState<string | undefined>(
-    undefined
+    undefined,
   );
   const [showIconEditor, setShowIconEditor] = useState(false);
   const [showGrid, setShowGrid] = useState(false);
@@ -45,7 +45,8 @@ const useInput = ({
 
   const selectedClassification = selectedUnit
     ? classifications.find(
-        (classification) => classification.id === selectedUnit.classification_id
+        (classification) =>
+          classification.id === selectedUnit.classification_id,
       )
     : undefined;
 
@@ -129,14 +130,14 @@ const useInput = ({
               .find(
                 (unit) =>
                   unit.id !== selectedUnit.id &&
-                  contains(unit.position, selectedUnit.position)
+                  contains(unit.position, selectedUnit.position),
               ) ?? targetUnit;
         }
 
         const moveAction = actions.find(
           (action) =>
             action.classification_id === targetUnit.classification_id &&
-            action.type === "move"
+            action.type === "move",
         );
 
         if (moveAction) {
@@ -182,7 +183,7 @@ const useInput = ({
         ...current,
         zoom: Math.min(
           Math.max(current.zoom + (event.deltaY < 0 ? 1 : -1), config.minZoom),
-          config.maxZoom
+          config.maxZoom,
         ),
       }));
     };

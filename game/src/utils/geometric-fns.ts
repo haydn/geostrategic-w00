@@ -10,7 +10,7 @@ const area = (shape: Box) => {
 const bottom = (shape: Shape) =>
   toPoints(shape).reduce(
     (result, point) => Math.max(result, point.y),
-    -Infinity
+    -Infinity,
   );
 
 const contains = (box: Box, shape: Shape) =>
@@ -43,19 +43,19 @@ const createPoint = ({ x = 0, y = 0 }: Partial<Point>): Point => ({
 const left = (shape: Shape) =>
   toPoints(shape).reduce(
     (result, point) => Math.min(result, point.x),
-    Infinity
+    Infinity,
   );
 
 const right = (shape: Shape) =>
   toPoints(shape).reduce(
     (result, point) => Math.max(result, point.x),
-    -Infinity
+    -Infinity,
   );
 
 const top = (shape: Shape) =>
   toPoints(shape).reduce(
     (result, point) => Math.min(result, point.y),
-    Infinity
+    Infinity,
   );
 
 const toPoints = (shape: Shape): Point[] => {

@@ -31,7 +31,7 @@ const Grid = () => {
               {x},{y}
             </text>
           </Fragment>
-        ))
+        )),
       )
     : null;
 };
