@@ -34,6 +34,9 @@ dependencies:
     version: 5.4.5
 
 devDependencies:
+  '@total-typescript/tsconfig':
+    specifier: ^1.0.4
+    version: 1.0.4
   '@types/node':
     specifier: ^20.14.2
     version: 20.14.2
@@ -1369,6 +1372,10 @@ packages:
     resolution: {integrity: sha512-RNFA3+7OJFNYY78x0FYwi1Ow+iF1eF5WvmfY1nXPOEH4R2p/D4Cr1vzje7dNAI2aLFqpv8Wyz4oKSWqIZArpQA==}
     dependencies:
       '@swc/counter': 0.1.3
+    dev: true
+
+  /@total-typescript/tsconfig@1.0.4:
+    resolution: {integrity: sha512-fO4ctMPGz1kOFOQ4RCPBRBfMy3gDn+pegUfrGyUFRMv/Rd0ZM3/SHH3hFCYG4u6bPLG8OlmOGcBLDexvyr3A5w==}
     dev: true
 
   /@trysound/sax@0.2.0:
