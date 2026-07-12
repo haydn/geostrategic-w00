@@ -1,10 +1,27 @@
 {
-  "name": "geostrategic-w00-docs",
+  "name": "rspress-doc-template",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "zola serve"
+    "build": "rspress build",
+    "dev": "rspress dev",
+    "format": "prettier --write .",
+    "lint": "rslint",
+    "preview": "rspress preview"
   },
-  "prettier": {
-    "proseWrap": "always"
+  "dependencies": {
+    "@rspress/core": "^2.0.16"
+  },
+  "devDependencies": {
+    "@rslint/core": "^0.5.3",
+    "@types/node": "^22.8.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "prettier": "^3.8.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "rspress-plugin-katex": "^1.0.1",
+    "rspress-plugin-mermaid": "^1.0.1"
   }
 }

@@ -1,11 +1,10 @@
-+++
-title = "Players"
-weight = 1
-+++
+---
+title: "Players"
+---
 
 Each person playing the game is represented as a player. Players own
-[autonomous units](@/units.md#autonomous-units) and interact with the world
-through [actions](@/actions.md).
+[autonomous units](/units.md#autonomous-units) and interact with the world
+through [actions](/actions.md).
 
 ## Properties
 
