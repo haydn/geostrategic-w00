@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Database } from "../_types";
 import useCamera from "./useCamera";
 import useEntities from "./useEntities";
+import type useAuth from "./useAuth";
 
 const DIRECTIONS = {
   ArrowDown: "south",
@@ -17,10 +18,12 @@ const isDirectionKey = (key: string): key is keyof typeof DIRECTIONS =>
   key in DIRECTIONS;
 
 const useInput = ({
+  auth,
   camera,
   entities,
   supabase,
 }: {
+  auth: ReturnType<typeof useAuth>;
   camera: ReturnType<typeof useCamera>;
   entities: ReturnType<typeof useEntities>;
   supabase: SupabaseClient<Database>;
@@ -159,6 +162,19 @@ const useInput = ({
       if (event.key === "g" && event.ctrlKey) {
         setShowGrid((current) => !current);
       }
+
+      if (selectedUnit && auth.player && event.key === "t") {
+        supabase
+          .rpc("transfer_ownership", {
+            unit_id: selectedUnit.id,
+            new_owner_id: auth.player.id,
+          })
+          .then((result) => {
+            if (result.status < 200 || result.status >= 300) {
+              console.error(result);
+            }
+          });
+      }
     };
 
     const wheelHandler = (event: WheelEvent) => {
@@ -192,7 +208,7 @@ const useInput = ({
       game.removeEventListener("wheel", wheelHandler);
       window.removeEventListener("keydown", keyDownHandler);
     };
-  }, [actions, camera, selectedUnit, supabase, units]);
+  }, [actions, auth, camera, selectedUnit, supabase, units]);
 
   return {
     gameRef,

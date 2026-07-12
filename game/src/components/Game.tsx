@@ -27,6 +27,7 @@ const Game = () => {
   const auth = useAuth(supabase, entities);
   const camera = useCamera();
   const input = useInput({
+    auth,
     camera,
     entities,
     supabase,
