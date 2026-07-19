@@ -1,7 +1,6 @@
-+++
-title = "Appendix"
-weight = 6
-+++
+---
+title: "Appendix"
+---
 
 ## Conversion Table
 

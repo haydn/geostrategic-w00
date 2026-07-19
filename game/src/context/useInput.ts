@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Database } from "../_types";
 import useCamera from "./useCamera";
 import useEntities from "./useEntities";
+import type useAuth from "./useAuth";
 
 const DIRECTIONS = {
   ArrowDown: "south",
@@ -17,10 +18,12 @@ const isDirectionKey = (key: string): key is keyof typeof DIRECTIONS =>
   key in DIRECTIONS;
 
 const useInput = ({
+  auth,
   camera,
   entities,
   supabase,
 }: {
+  auth: ReturnType<typeof useAuth>;
   camera: ReturnType<typeof useCamera>;
   entities: ReturnType<typeof useEntities>;
   supabase: SupabaseClient<Database>;
@@ -29,7 +32,7 @@ const useInput = ({
   const { units, classifications, actions } = entities;
 
   const [selectedUnitId, setSelectedUnitId] = useState<string | undefined>(
-    undefined
+    undefined,
   );
   const [showIconEditor, setShowIconEditor] = useState(false);
   const [showGrid, setShowGrid] = useState(false);
@@ -42,7 +45,8 @@ const useInput = ({
 
   const selectedClassification = selectedUnit
     ? classifications.find(
-        (classification) => classification.id === selectedUnit.classification_id
+        (classification) =>
+          classification.id === selectedUnit.classification_id,
       )
     : undefined;
 
@@ -126,14 +130,14 @@ const useInput = ({
               .find(
                 (unit) =>
                   unit.id !== selectedUnit.id &&
-                  contains(unit.position, selectedUnit.position)
+                  contains(unit.position, selectedUnit.position),
               ) ?? targetUnit;
         }
 
         const moveAction = actions.find(
           (action) =>
             action.classification_id === targetUnit.classification_id &&
-            action.type === "move"
+            action.type === "move",
         );
 
         if (moveAction) {
@@ -159,6 +163,19 @@ const useInput = ({
       if (event.key === "g" && event.ctrlKey) {
         setShowGrid((current) => !current);
       }
+
+      if (selectedUnit && auth.player && event.key === "t") {
+        supabase
+          .rpc("transfer_ownership", {
+            unit_id: selectedUnit.id,
+            new_owner_id: auth.player.id,
+          })
+          .then((result) => {
+            if (result.status < 200 || result.status >= 300) {
+              console.error(result);
+            }
+          });
+      }
     };
 
     const wheelHandler = (event: WheelEvent) => {
@@ -166,7 +183,7 @@ const useInput = ({
         ...current,
         zoom: Math.min(
           Math.max(current.zoom + (event.deltaY < 0 ? 1 : -1), config.minZoom),
-          config.maxZoom
+          config.maxZoom,
         ),
       }));
     };
@@ -192,7 +209,7 @@ const useInput = ({
       game.removeEventListener("wheel", wheelHandler);
       window.removeEventListener("keydown", keyDownHandler);
     };
-  }, [actions, camera, selectedUnit, supabase, units]);
+  }, [actions, auth, camera, selectedUnit, supabase, units]);
 
   return {
     gameRef,

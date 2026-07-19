@@ -1,21 +1,23 @@
-CREATE FUNCTION join_game (name text) RETURNS void LANGUAGE plpgsql SECURITY DEFINER AS $$
+CREATE FUNCTION join_game(name text)
+RETURNS void
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
 DECLARE
   unit_id uuid;
-  user_has_player boolean;
+  user_has_player BOOLEAN;
   player_id uuid;
 BEGIN
   SELECT
     units.id
   INTO unit_id
-  FROM units
-  JOIN classifications
-    ON units.classification_id = classifications.id
-  WHERE true
-    AND classifications.autonomous = true
-    AND units.owner_id IS NULL
+  FROM
+    units
+    JOIN classifications ON units.classification_id = classifications.id
+  WHERE TRUE AND classifications.autonomous = TRUE AND units.owner_id IS NULL
   ORDER BY units.created_at DESC
   LIMIT 1;
-  
+
   SELECT
     count(*) > 0
   INTO user_has_player

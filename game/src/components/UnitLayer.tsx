@@ -14,10 +14,10 @@ const UnitLayer = () => {
     .sort((a, b) => area(b.position) - area(a.position))
     .map((unit) => {
       const classification = classifications.find(
-        (c) => c.id === unit.classification_id
+        (c) => c.id === unit.classification_id,
       );
       const owner = players.find(
-        (p) => p.id === unit.owner_id //&& p.user_id !== null
+        (p) => p.id === unit.owner_id, //&& p.user_id !== null
       );
       return (
         <Token

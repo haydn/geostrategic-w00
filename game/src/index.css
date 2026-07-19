@@ -267,8 +267,19 @@ input {
 
 body {
   color: oklch(50% 0, 0);
-  font: normal 400 12px / 16px "Courier Prime", ui-monospace, Menlo, Monaco,
-    "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
-    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
-    "Courier New", monospace;
+  font:
+    normal 400 12px / 16px "Courier Prime",
+    ui-monospace,
+    Menlo,
+    Monaco,
+    "Cascadia Mono",
+    "Segoe UI Mono",
+    "Roboto Mono",
+    "Oxygen Mono",
+    "Ubuntu Monospace",
+    "Source Code Pro",
+    "Fira Mono",
+    "Droid Sans Mono",
+    "Courier New",
+    monospace;
 }

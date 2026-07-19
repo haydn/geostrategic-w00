@@ -28,7 +28,7 @@ const IconEditor = () => {
       for (let i = 0; i < 32; i++) {
         const pixels = parseInt(
           selectedClassification.icon.slice(2 + i * 8, 2 + i * 8 + 8),
-          16
+          16,
         )
           .toString(2)
           .padStart(32, "0")
@@ -117,7 +117,7 @@ const IconEditor = () => {
                 fill={pixel ? "black" : "white"}
                 onClick={() => {
                   setPixels((current) =>
-                    current.map((row, i) => (i === index ? !row : row))
+                    current.map((row, i) => (i === index ? !row : row)),
                   );
                 }}
                 stroke={showGrid ? "#eee" : "none"}

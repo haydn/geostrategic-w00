@@ -5,7 +5,7 @@ import useEntities from "./useEntities";
 
 const useAuth = (
   supabase: SupabaseClient<Database>,
-  entities: ReturnType<typeof useEntities>
+  entities: ReturnType<typeof useEntities>,
 ) => {
   const [user, setUser] = useState<User | null>(null);
 
