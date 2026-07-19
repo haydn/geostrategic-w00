@@ -40,7 +40,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "parcel": "^2.12.0",
     "process": "^0.11.10",
-    "supabase": "^1.178.2",
+    "supabase": "^2.109.1",
     "typescript-eslint": "^7.13.0",
     "typescript-plugin-css-modules": "^5.1.0"
   }
