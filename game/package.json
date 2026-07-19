@@ -1,23 +1,6 @@
 {
-  "name": "geostrategic-w00",
-  "version": "0.0.0",
-  "private": true,
-  "license": "UNLICENSED",
-  "packageManager": "pnpm@8.14.3",
-  "scripts": {
-    "activate": "supabase start",
-    "build:prep": "rm -rf dist",
-    "build": "pnpm build:prep && parcel build ./src/index.html",
-    "db:migrate": "supabase migration up",
-    "db:reset": "supabase db reset",
-    "deactivate": "supabase stop --no-backup",
-    "dev": "parcel ./src/index.html",
-    "format": "prettier --write .",
-    "gen:migration": "supabase migration new",
-    "gen:types": "supabase gen types typescript --local > ./src/_generated.ts",
-    "test:lint": "eslint -c ./eslint.config.mjs src",
-    "test:types": "tsc -p ./tsconfig.json",
-    "test": "pnpm test:lint && pnpm test:types"
+  "alias": {
+    "buffer": false
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.7",
@@ -38,10 +21,29 @@
     "eslint": "^9.5.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "parcel": "^2.12.0",
-    "process": "^0.11.10",
+    "parcel": "^2.16.4",
     "supabase": "^2.109.1",
     "typescript-eslint": "^7.13.0",
     "typescript-plugin-css-modules": "^5.1.0"
-  }
+  },
+  "license": "UNLICENSED",
+  "name": "geostrategic-w00",
+  "packageManager": "pnpm@8.14.3",
+  "private": true,
+  "scripts": {
+    "activate": "supabase start",
+    "build:prep": "rm -rf dist",
+    "build": "pnpm build:prep && parcel build ./src/index.html",
+    "db:migrate": "supabase migration up",
+    "db:reset": "supabase db reset",
+    "deactivate": "supabase stop --no-backup",
+    "dev": "parcel ./src/index.html",
+    "format": "prettier --write .",
+    "gen:migration": "supabase migration new",
+    "gen:types": "supabase gen types typescript --local > ./src/_generated.ts",
+    "test:lint": "eslint -c ./eslint.config.mjs src",
+    "test:types": "tsc -p ./tsconfig.json",
+    "test": "pnpm test:lint && pnpm test:types"
+  },
+  "version": "0.0.0"
 }
